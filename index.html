@@ -79,6 +79,7 @@
 
     .card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column}
     .card .thumb{aspect-ratio: 16/9; background:linear-gradient(135deg, color-mix(in oklab, var(--accent) 30%, transparent), transparent), repeating-linear-gradient(45deg, rgba(0,0,0,.05) 0 10px, transparent 10px 20px)}
+    .card .thumb img{width: 100%; height: 100%; object-fit: cover; display: block;}
     .card .body{padding:1rem}
     .card h3{margin:.1rem 0 .25rem; font-size:1.05rem}
     .tags{display:flex; flex-wrap:wrap; gap:.4rem; margin:.5rem 0 0; padding:0; list-style:none}
@@ -140,14 +141,21 @@
 
     <section id="projects" aria-labelledby="proj-h2">
       <h2 id="proj-h2">Featured projects</h2>
-      <p class="muted">Three concise case studies. Replace placeholders with your images/links and add metrics.</p>
       <div class="cards">
+
         <!-- Project 1: U-Net -->
         <article class="card" aria-labelledby="p1-title">
-          <div class="thumb" aria-hidden="true"></div>
+          <div class="thumb">
+              <img
+                src="./assets/unet-hip-thumb.webp"
+                alt="U-Net hip MRI segmentation overlay preview"
+                loading="lazy"
+                width="1280" height="720"
+              />
+          </div>
           <div class="body">
-            <h3 id="p1-title">U‑Net MRI Segmentation</h3>
-            <p>Trained and evaluated a U‑Net for brain MRI segmentation. Implemented augmentation, IoU/Dice metrics, error analysis, and exported an inference script.</p>
+            <h3 id="p1-title">U‑Net Hip MRI Segmentation</h3>
+            <p>Trained and evaluated a U‑Net for HIP MRI segmentation. Implemented augmentation, IoU/Dice metrics, error analysis, and exported an inference script.</p>
             <ul class="tags">
               <li class="tag">PyTorch</li>
               <li class="tag">Segmentation</li>
@@ -155,7 +163,7 @@
             </ul>
           </div>
           <div class="actions">
-            <a class="chip" href="https://github.com/USERNAME/unet-segmentation" target="_blank" rel="noreferrer">Code ↗</a>
+            <a class="chip" href="https://github.com/KJuure/prostate-unet" target="_blank" rel="noreferrer">Code ↗</a>
             <a class="chip" href="#" aria-disabled="true" onclick="return false;">Demo (soon)</a>
           </div>
         </article>

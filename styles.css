@@ -1,0 +1,283 @@
+/* Minimal, GitHub Pages-friendly portfolio styles.
+   - No build step required
+   - Dark-mode by default
+*/
+:root{
+  --bg: #0b0f19;
+  --bg2:#0e1423;
+  --card:#111a2e;
+  --text:#e7ecf6;
+  --muted:#aab4cc;
+  --line:#223055;
+  --accent:#5eead4;
+  --accent2:#60a5fa;
+  --shadow: 0 12px 30px rgba(0,0,0,.35);
+  --radius: 18px;
+  --max: 1060px;
+}
+@media (prefers-color-scheme: light) {
+  :root{
+    --bg:#f7f9ff;
+    --bg2:#ffffff;
+    --card:#ffffff;
+    --text:#101828;
+    --muted:#475467;
+    --line:#e4e7ec;
+    --accent:#0ea5e9;
+    --accent2:#10b981;
+    --shadow: 0 10px 22px rgba(16,24,40,.10);
+  }
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: linear-gradient(180deg, var(--bg), var(--bg2));
+  color: var(--text);
+  line-height: 1.55;
+}
+a{color:inherit}
+code, pre{
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+}
+pre{
+  margin:0;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: rgba(0,0,0,.22);
+  border: 1px solid var(--line);
+  overflow:auto;
+}
+.container{
+  width: min(var(--max), calc(100% - 40px));
+  margin: 0 auto;
+}
+.site-header{
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: color-mix(in oklab, var(--bg), transparent 35%);
+  border-bottom: 1px solid var(--line);
+}
+.header-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: 12px 0;
+}
+.brand{
+  width:40px;height:40px;
+  display:grid;place-items:center;
+  border-radius: 12px;
+  background: color-mix(in oklab, var(--card), transparent 20%);
+  border: 1px solid var(--line);
+  text-decoration:none;
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+.nav{
+  display:flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.nav a{
+  text-decoration:none;
+  color: var(--muted);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+.nav a:hover{
+  color: var(--text);
+  background: color-mix(in oklab, var(--card), transparent 35%);
+  border: 1px solid var(--line);
+}
+.hero{
+  padding: 52px 0 28px;
+}
+.hero-grid{
+  display:grid;
+  gap: 22px;
+  grid-template-columns: 1.4fr .9fr;
+}
+@media (max-width: 900px){
+  .hero-grid{grid-template-columns: 1fr;}
+}
+.kicker{
+  color: var(--muted);
+  margin: 0 0 10px;
+}
+h1{
+  font-size: clamp(30px, 4vw, 44px);
+  margin: 0 0 12px;
+  letter-spacing: -0.02em;
+}
+.lede{
+  font-size: 1.06rem;
+  color: color-mix(in oklab, var(--text), var(--muted) 20%);
+  margin: 0 0 16px;
+}
+.note{
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: .95rem;
+}
+.hero-card{
+  border-radius: var(--radius);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--card), transparent 5%), color-mix(in oklab, var(--card), transparent 25%));
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  padding: 18px 18px 16px;
+}
+.mono{
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(0,0,0,.20);
+  padding: 14px 16px;
+}
+.mono-line{color: var(--text); opacity:.92}
+.pill-row{
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+.pill{
+  font-size: .82rem;
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 6px 10px;
+  background: color-mix(in oklab, var(--card), transparent 30%);
+}
+.section{
+  padding: 36px 0;
+}
+.section-alt{
+  background: color-mix(in oklab, var(--card), transparent 60%);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+h2{
+  margin: 0 0 10px;
+  font-size: 1.6rem;
+  letter-spacing: -.01em;
+}
+.sublede{
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+.cards{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+@media (max-width: 900px){
+  .cards{grid-template-columns: 1fr;}
+}
+.card{
+  border-radius: var(--radius);
+  background: color-mix(in oklab, var(--card), transparent 10%);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  display:flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.card-media{
+  border-bottom: 1px solid var(--line);
+  background: rgba(0,0,0,.14);
+}
+.card-media img{
+  width:100%;
+  height: 240px;
+  object-fit: cover;
+  display:block;
+}
+.card-media--code{
+  padding: 10px;
+}
+.card-body{
+  padding: 16px 16px 14px;
+  display:flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card-body h3{
+  margin:0;
+  font-size: 1.18rem;
+}
+.muted{color: var(--muted)}
+.small{font-size:.92rem}
+ul{margin: 0 0 0 18px; padding:0}
+li{margin: 6px 0}
+.link-row{
+  margin-top: auto;
+  display:flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.link{
+  color: color-mix(in oklab, var(--accent), var(--text) 30%);
+  text-decoration:none;
+  font-weight: 600;
+}
+.link:hover{ text-decoration: underline; }
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 12px;
+  padding: 10px 12px;
+  text-decoration:none;
+  border: 1px solid var(--line);
+  color: var(--text);
+  background: color-mix(in oklab, var(--card), transparent 30%);
+}
+.btn:hover{
+  background: color-mix(in oklab, var(--card), transparent 10%);
+}
+.primary{
+  border-color: color-mix(in oklab, var(--accent2), var(--line) 50%);
+  background: color-mix(in oklab, var(--accent2), transparent 82%);
+}
+.cta-row{
+  display:flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.callout{
+  margin-top: 18px;
+  border-radius: var(--radius);
+  border: 1px dashed color-mix(in oklab, var(--accent), var(--line) 60%);
+  background: color-mix(in oklab, var(--accent), transparent 92%);
+  padding: 14px 16px;
+}
+.cols{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+@media (max-width: 900px){
+  .cols{grid-template-columns: 1fr;}
+}
+.col{
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: color-mix(in oklab, var(--card), transparent 25%);
+  padding: 14px 14px 12px;
+}
+.col h3{margin: 0 0 8px}
+.footer{
+  padding: 22px 0 36px;
+}
+.footer-row{
+  display:flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}

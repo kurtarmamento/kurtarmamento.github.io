@@ -18,6 +18,7 @@
       <a class="brand" href="#top">KA</a>
       <nav class="nav">
         <a href="#projects">Projects</a>
+        <a href="#engineering">Engineering</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
@@ -47,10 +48,10 @@
 
         <div class="hero-card">
           <div class="mono">
-            <div class="mono-line">DHT11 → ESP8266 (Lua)</div>
+            <div class="mono-line">DHT11 -> ESP8266 (Lua)</div>
             <div class="mono-line">Publish MQTT telemetry</div>
-            <div class="mono-line">Node-RED → HTTP ingest</div>
-            <div class="mono-line">Alerts → Discord</div>
+            <div class="mono-line">Node-RED -> HTTP ingest</div>
+            <div class="mono-line">Alerts -> Discord</div>
             <div class="mono-line">Machine Learning Models</div>
           </div>
           <div class="pill-row">
@@ -149,7 +150,7 @@
 
           <article class="card">
             <div class="card-media card-media--code">
-              <pre><code>Preprocess: RAS → resample → bbox crop → cache (.npz)
+              <pre><code>Preprocess: RAS → resample -> bbox crop → cache (.npz)
 Train:      2D / 2.5D U-Net (k-slice stacks)
 Eval:       full-volume inference + threshold sweep
 Export:     masks as NIfTI for inspection</code></pre>
@@ -178,6 +179,120 @@ Export:     masks as NIfTI for inspection</code></pre>
       </div>
     </section>
 
+    <section id="engineering" class="section">
+      <div class="container">
+        <h2>Engineering Builds</h2>
+        <p class="sublede">
+          Selected hands-on builds demonstrating circuitry fundamentals, measurement/verification and end-to-end prototyping. (Software-focused projects are above.)
+        </p>
+
+        <div class="cards">
+          <!-- Engineering 1 -->
+           <article class="card">
+            <div class="card-media card-media--code">
+              <pre><code>Measure I/O -> estimate response (system ID)
+Design inverse filter (stable + noise-aware)
+Validate with before/after plots</code></pre>
+            </div>
+            <div class="card-body">
+              <h3>Inverse Filter for a Black-Box Circuit</h3>
+              <p class="muted">Signals - Circuits - Verification</p>
+              <p>
+                Recovered an input signal after distortion by an unknown circuit by measuring the frequency response and designing a stable inverse filter.
+              </p>
+              <ul>
+                <li>Evidence-driven: measurement first, design second.</li>
+                <li>Verification Artifacts: plots + test cases.</li>
+              </ul>
+              <div class="link-row">
+            <a class="link" href="engineering/blackbox-filter.html">Case study</a>
+          </div>
+            </div>
+           </article>
+
+           <!-- Engineering 2 -->
+      <article class="card">
+        <div class="card-media card-media--code">
+          <pre><code>Remote control  motor/actuation control
+Power + wiring + integration
+End-to-end testing + iteration</code></pre>
+        </div>
+        <div class="card-body">
+          <h3>Remote-Controlled Fire Truck Prototype</h3>
+          <p class="muted">Embedded - Integration - Build & test</p>
+          <p>
+            Built and tested a prototype from electronics integration through to final construction and system validation.
+          </p>
+          <ul>
+            <li>Block diagram + wiring documentation.</li>
+            <li>Iterative debugging and reliability improvements.</li>
+            <li>Demonstration video and test checklist.</li>
+          </ul>
+          <div class="link-row">
+            <a class="link" href="engineering/rc-firetruck.html">Case study</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Engineering 3 -->
+      <article class="card">
+        <div class="card-media card-media--code">
+          <pre><code>Curated selection of circuit work:
+schematics -> build -> measurement -> verify</code></pre>
+        </div>
+        <div class="card-body">
+          <h3>Circuits & Engineering Assignments (Selected)</h3>
+          <p class="muted">Analysis - Measurement - Documentation</p>
+          <p>
+            A compact gallery of coursework and lab builds that demonstrate core circuit knowledge and verification discipline.
+          </p>
+          <ul>
+            <li>Focus on evidence: expected vs measured behavior.</li>
+            <li>Clear assumptions and calculation steps.</li>
+            <li>Photos + plots + short write-ups.</li>
+          </ul>
+          <div class="link-row">
+            <a class="link" href="engineering/circuits-gallery.html">Gallery</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Engineering 4 -->
+      <article class="card">
+        <div class="card-media card-media--code">
+          <pre><code>Self-directed restoration:
+diagnose -> repair -> validate -> document</code></pre>
+        </div>
+        <div class="card-body">
+          <h3>Motorcycle Restoration (1992 CB400SF)</h3>
+          <p class="muted">Troubleshooting - Self-directed learning</p>
+          <p>
+            Restored a 1992 motorcycle with no prior experience by building a repeatable diagnostic and repair workflow.
+          </p>
+          <ul>
+            <li>System-level troubleshooting under real constraints.</li>
+            <li>Safety-first iteration and validation.</li>
+            <li>Build log with before/after and key repairs.</li>
+          </ul>
+          <div class="link-row">
+            <a class="link" href="engineering/cb400sf.html">Build log</a>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="callout">
+      <p>
+        <strong>Note:</strong> Each case study is structured as: problem → constraints → approach → verification → artifacts.
+      </p>
+    </div>
+  </div>
+</section>
+        </div>
+
+        
+      </div>
+    </section>
     <section id="experience" class="section section-alt">
       <div class="container">
         <h2>Experience</h2>

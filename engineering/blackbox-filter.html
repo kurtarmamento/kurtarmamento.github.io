@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Inverse Filter for a Black-Box Circuit - Kurt Armamento</title>
+  <title>Inverse Filter for a Black-Box Circuit — Kurt Armamento</title>
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
@@ -23,38 +23,121 @@
     <section class="section">
       <div class="container">
         <h2>Inverse Filter for a Black-Box Circuit</h2>
-        <p class="sublede">One-sentence summary of what you built and verified.</p>
+        <p class="sublede">
+          Measured an unknown circuit’s response and designed a stable inverse filter to recover the original signal.
+        </p>
 
         <div class="cols">
           <div class="col">
             <h3>What this demonstrates</h3>
             <ul>
-              <li>Bullet 1</li>
-              <li>Bullet 2</li>
-              <li>Bullet 3</li>
+              <li>Practical circuits + signals reasoning (time/frequency-domain behavior).</li>
+              <li>Evidence-driven workflow: measure -> model -> design -> validate.</li>
+              <li>Verification discipline: before/after plots and objective comparisons.</li>
+              <li>Usage of oscilloscope, multimeter and power supply.</li>
             </ul>
           </div>
 
           <div class="col">
-            <h3>Artifacts</h3>
-            <ul>
-              <li>Link to report / PDF</li>
-              <li>Photos</li>
-              <li>Plots / measurements</li>
-              <li>Video demo (optional)</li>
-            </ul>
+            <h3>Summary</h3>
+            <p class="muted">
+              In this assignment, we were tasked to take the voltage frequency response of an unkown black-box circuit and produce
+              an inverse circuit.<br>
+              First, I calculated the transfer function of the black-box using calculus to then produce the inverse transfer function.<br>
+              Once calculated, a corresponding circuit was designed using capacitors and resistors.<br>
+              Lastly, the signal was amplified using an inverting amplifier.
+            </p>
           </div>
         </div>
 
-        <div class="callout">
-          <p><strong>Case study structure:</strong> Problem -> Constraints -> Approach -> Verification -> Artifacts.</p>
+        <h3 style="margin-top: 18px;">Artifacts</h3>
+
+        <div class="cards">
+          <!-- Artifact 1 -->
+          <article class="card">
+            <div class="card-media-fit">
+              <img
+                src="../engineering/blackbox/black_box_frequency_response.png"
+                alt="Black Box frequency response"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-body">
+              <p class="muted small">Black Box (Unknown circuit) frequency response</p>
+            </div>
+          </article>
+
+          <!-- Artifact 2 -->
+          <article class="card">
+            <div class="card-media-fit">
+              <img
+                src="../engineering/blackbox/inverse_circuit_frequency_response.png"
+                alt="Inverse Circuit frequency response"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-body">
+              <p class="muted small">Inverse Circuit frequency response</p>
+            </div>
+          </article>
+
+          <!-- Artifact 3 -->
+          <article class="card">
+            <div class="card-media-fit">
+              <img
+                src="../engineering/blackbox/final_voltage_plot.png"
+                alt="Final Voltage Bode Plot"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-body">
+              <p class="muted small">Final Voltage Bode Plot compared to goal voltage</p>
+            </div>
+          </article>
+
+          <!-- Artifact 4 -->
+          <article class="card">
+            <div class="card-media-fit">
+              <img
+                src="../engineering/blackbox/circuit.png"
+                alt="Physical Circuit"
+                loading="lazy"
+              />
+            </div>
+            <div class="card-body">
+              <p class="muted small">Physical Circuit</p>
+            </div>
+          </article>
+
+          <!-- Artifact 5 -->
+          <article class="card card--span2">
+            <div class="card-media-fit">
+              <img src="../engineering/blackbox/full_circuit.png" 
+                   alt="Final Circuit Schematic" 
+                   loading="lazy" />
+            </div>
+            <div class="card-body">
+              <p class="muted small">Final Circuit Schematic</p>
+            </div>
+          </article>
         </div>
+        <br>
 
         <div class="link-row">
           <a class="btn" href="../index.html#engineering">Back</a>
         </div>
       </div>
     </section>
+
+    <footer class="footer">
+      <div class="container footer-row">
+        <span>© <span id="year"></span> Kurt Armamento</span>
+      </div>
+    </footer>
   </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>

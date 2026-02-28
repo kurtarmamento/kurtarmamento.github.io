@@ -3,6 +3,7 @@
    - Dark-mode by default
 */
 :root{
+  --header-offset: 25px;
   --bg: #0b0f19;
   --bg2:#0e1423;
   --card:#111a2e;
@@ -14,6 +15,13 @@
   --shadow: 0 12px 30px rgba(0,0,0,.35);
   --radius: 18px;
   --max: 1060px;
+}
+html{
+  scroll-padding-top: var(--header-offset);
+}
+
+section[id]{
+  scroll-margin-top: var(--header-offset);
 }
 @media (prefers-color-scheme: light) {
   :root{
@@ -99,6 +107,7 @@ pre{
   display:grid;
   gap: 22px;
   grid-template-columns: 1.4fr .9fr;
+  align-items: center;
 }
 @media (max-width: 900px){
   .hero-grid{grid-template-columns: 1fr;}
@@ -128,6 +137,30 @@ h1{
   border: 1px solid var(--line);
   box-shadow: var(--shadow);
   padding: 18px 18px 16px;
+}
+.hero-card--photo{
+  padding: 0;
+  overflow: hidden;
+  border: 3px solid var(--line);
+  background: transparent;
+  aspect-ratio: 4 / 5;   /* good portrait shape */
+  min-height: 360px;
+}
+
+.hero-photo{
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center top;
+  border: 0;
+  border-radius: 0;
+}
+
+@media (max-width: 900px){
+  .hero-card--photo{
+    min-height: 300px;
+  }
 }
 .mono{
   border-radius: 14px;
